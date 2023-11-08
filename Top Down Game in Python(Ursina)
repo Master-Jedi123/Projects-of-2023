@@ -1,0 +1,18 @@
+from ursina import*
+
+app= Ursina()
+
+Player=Entity(model='cube', color=color.red, sacle=(2,2,2) )
+
+def update():
+    # Move the player with keyboard input
+    if held_keys['a']:
+        Player.x -= 1 * time.dt  # 'a' key moves the cube left
+    if held_keys['d']:
+        Player.x += 1 * time.dt  # 'd' key moves the cube right
+    if held_keys['w']:
+        Player.y += 1 * time.dt  # 'w' key moves the cube up
+    if held_keys['s']:
+        Player.y -= 1 * time.dt  # 's' key moves the cube down
+
+app.run()
